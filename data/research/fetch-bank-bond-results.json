@@ -1,0 +1,26 @@
+[
+  {
+    "id": "boc-deposit-20151024",
+    "url": "https://www.bankofchina.com/fimarkets/lilv/fd31/201510/t20151023_5824963.html",
+    "file": "boc-deposit-20151024.html",
+    "status": 200,
+    "bytes": 28182,
+    "retrieved_at": "2026-11-14T03:46:21.884Z"
+  },
+  {
+    "id": "mof-home",
+    "url": "https://www.mof.gov.cn/",
+    "file": "mof-home.html",
+    "status": 200,
+    "bytes": 2534,
+    "retrieved_at": "2026-11-14T03:46:21.636Z"
+  },
+  {
+    "id": "eastmoney-treasury-symbol-search",
+    "url": "https://searchapi.eastmoney.com/api/suggest/get?input=20%E5%9B%BD%E5%80%BA01&type=14&count=5",
+    "file": "treasury-symbol-search.json",
+    "status": 200,
+    "bytes": 106,
+    "retrieved_at": "2026-11-14T03:46:21.634Z"
+  }
+]

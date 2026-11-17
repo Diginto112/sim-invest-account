@@ -1,0 +1,53 @@
+{
+  "snapshot_id": "cn-2020h1-public-local-v1",
+  "created_at": "2026-11-14T03:47:27.657Z",
+  "files": [
+    {
+      "file": "stock-600036-2020h1.json",
+      "sha256": "9a017bf2fd22066b102fa7d481478edf545cfe712ae019570d0924efe09b4686"
+    },
+    {
+      "file": "stock-600036-dividend-2019.json",
+      "sha256": "b36b88d9cf0f44353f5cde6c7776de6f57353c51f511c89a83bf5ca37e8803ee"
+    },
+    {
+      "file": "fund-005827-2020h1-p1.json",
+      "sha256": "4db101a5b9319305c3d4bf1fab2dc6911c2bfe1e139d97e0b17e84fba5ce1622"
+    },
+    {
+      "file": "fund-005827-2020h1-p2.json",
+      "sha256": "8125751072a63a949ccd5e59b60fb975d4a82014ed805387217679552a7b8512"
+    },
+    {
+      "file": "fund-005827-2020h1-p3.json",
+      "sha256": "b63ce05ac66fc837907bc13bc513683f1cb4489f69264cdbf1b86ceb10c9afe2"
+    },
+    {
+      "file": "fund-005827-2020h1-p4.json",
+      "sha256": "dc1380a726dea6b81eb8328e675643fafafabe955b3f60d2915675767a12bd28"
+    },
+    {
+      "file": "fund-005827-2020h1-p5.json",
+      "sha256": "5cc9e05e0458ad92824a24e1d0c6451fb73506eaace1318f8f700fe9baacd0a1"
+    },
+    {
+      "file": "fund-005827-2020h1-p6.json",
+      "sha256": "044b2165533b68611aba1cf3caebe993bff51c9393e496d2a2ed7ce4f87ffa9a"
+    },
+    {
+      "file": "boc-deposit-20151024.html",
+      "sha256": "669e5687526c859090d43fcfdacdb7de6a0f880b4f7a79bd807201f183f6dd5a"
+    },
+    {
+      "file": "boc-deposit-archive-full.html",
+      "sha256": "e6dea9f3c73d8472b387248402502cab2d6836b15ccbb73d4bc4ec3d23dacc8a"
+    }
+  ],
+  "summary": {
+    "stock_rows": 117,
+    "fund_rows": 117,
+    "date_sets_match": true,
+    "synthetic": false,
+    "bank_effective_records": 1
+  }
+}

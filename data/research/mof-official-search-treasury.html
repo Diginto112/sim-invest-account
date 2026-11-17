@@ -1,0 +1,362 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=1000"/>
+<title>中华人民共和国财政部_全文检索</title>
+<link href="czb_css/favicon.ico" rel="shortcut icon" type="image/x-icon">
+ <script src="czb_css/jquery.min.js"></script>
+<link href="czb_css/style_zz.css" rel="stylesheet" type="text/css">
+<script src="czb_css/calendar.js"></script>
+<script src="czb_css/WdatePicker.js"></script>
+<script type="text/javascript" src="mofimages/js/My97DatePicker/WdatePicker.js"></script>
+<style>
+.numcss span{display:inline-block; padding:0 12px; height:26px; line-height:26px; border:1px solid #eee; text-align:center; color:#fff; background:#3f548d !important; border:1px solid #3f548d;}
+.next-page {  display:inline-block; padding:0 12px; height:26px; line-height:26px; border:1px solid #eee; text-align:center;}
+.last-page{  display:inline-block; padding:0 12px; height:26px; line-height:26px; border:1px solid #eee; text-align:center;}
+.prev-page {  display:inline-block; padding:0 12px; height:26px; line-height:26px; border:1px solid #eee; text-align:center;}
+.first-page {  display:inline-block; padding:0 12px; height:26px; line-height:26px; border:1px solid #eee; text-align:center;}
+
+</style>
+
+
+<script language="javascript">
+function setAdvancedWords()
+{
+    document.outlinesearchform.andsen.value = '';
+    document.outlinesearchform.total.value = '';
+    document.outlinesearchform.orsen.value = '';
+    document.outlinesearchform.exclude.value = '';
+}
+function setSearchScope(type) {
+	var searchScope="doctitle";
+	 if(type=='标题'){
+		searchScope="doctitle";
+	}
+	 if(type=='正文'){
+		searchScope="doccontent";
+	}
+	 if(type=='全部'){
+		searchScope="";
+	}
+	$("#searchscope").val(searchScope);
+}
+
+function setTimeScope(type) {
+	
+    document.searchform.timescope.value = type;
+	if(type=="customdate"){
+		if($("#sstarttime").val()==""){
+			 alert("自定义开始时间不能为空！");
+			 return false;
+		}
+		if($("#sendtime").val()==""){
+			 alert("自定义结束时间不能为空！");
+			 return false;
+		}
+		document.searchform.sStartTime.value=$("#sstarttime").val();
+		document.searchform.sEndTime.value=$("#sendtime").val();
+	}
+	//alert(type);
+    document.searchform.submit();
+
+}
+
+
+function setOrderBy(type) {
+	var s1= $(".paixubox .on").html();
+     //alert(s1);
+    document.searchform.orderby.value = type;
+    document.searchform.submit();
+}
+</script>
+<script type="text/javascript">
+
+		//String.prototype.trim = function () {
+        //    return this.replace(/^\s*/, "").replace(/\s*$/, "");
+        //};
+		String.prototype.trim = function () {
+
+            return this
+				       .replace(/\s/g, "")
+					   .replace(/\|/g, "")
+					   .replace(/&/g, "")
+					   .replace(/;/g, "")
+					   .replace(/\$/g, "")
+					   .replace(/%/g, "")
+					   .replace(/@/g, "")
+					   .replace(/\'/g, "")
+					   .replace(/\"/g, "")
+					   .replace(/</g, "")
+					   .replace(/>/g, "")
+					   .replace(/\(/g, "")
+					   .replace(/\)/g, "")
+					   .replace(/\+/g, "")
+					   .replace(/CR/g, "")
+					   .replace(/LF/g, "")
+					   .replace(/,/g, "")
+					   .replace(/\./g, "")
+					   .replace(/script/g, "")
+					   .replace(/document/g, "")
+					   .replace(/eval/g, "") ;
+        };
+		
+        function checkInput() {
+            var searchword = document.searchform.searchword.value.trim();
+			var scope= $(".select_box span").html();
+
+			setSearchScope(scope);
+            if (searchword != '') {
+                document.searchform.submit();
+            } else {
+                document.searchform.searchword.focus();
+                alert("检索词不能为空");
+                return false;
+            }
+        }
+$(document).ready(function(){
+			var scope="";
+			//alert(scope);
+			if(scope=="doccontent"){
+					$("#showscope").html("正文");
+			}
+			if(scope=="doctitle"){
+					$("#showscope").html("标题");
+			}
+			if(scope==""){
+					$("#showscope").html("全部");
+			}
+});
+</script>
+<script>
+
+function getCurDate()
+{
+ var d = new Date();
+ var week;
+ switch (d.getDay()){
+ case 1: week="星期一"; break;
+ case 2: week="星期二"; break;
+ case 3: week="星期三"; break;
+ case 4: week="星期四"; break;
+ case 5: week="星期五"; break;
+ case 6: week="星期六"; break;
+ default: week="星期天";
+ }
+ var years = d.getFullYear();
+ var month = add_zero(d.getMonth()+1);
+ var days = add_zero(d.getDate());
+ var hours = add_zero(d.getHours());
+ var minutes = add_zero(d.getMinutes());
+ var seconds=add_zero(d.getSeconds());
+ var ndate = years+"年"+month+"月"+days+"日&nbsp;&nbsp;"+week;
+ var divT=document.getElementById("divT"); 
+ divT.innerHTML= ndate;
+}
+ 
+function add_zero(temp)
+{
+ if(temp<10) return "0"+temp;
+ else return temp;
+}
+setInterval("getCurDate()",100);
+
+</script>
+</head>
+<body>
+<div class="logodiv">
+<h2><a href="http://www.mof.gov.cn/index.htm"><img src="mofimages/czb_logo.png" alt="中华人民共和国财政部"/></a></h2>
+<!--<div class="zzName" id="zzName" style="line-height:38px;"></div>-->
+</div>
+<div class="nav">
+<p><span id="divT">2017年11月21日 星期二</span></p>
+<div class="returnmain">
+	<a href="http://www.mof.gov.cn">返回主站</a>
+
+</div>
+</div>
+
+<div class="mainboxerji">
+
+<div class="searbarbox">
+<form action="search" method="post" name="searchform" onsubmit="return false">
+                <input type="hidden" name="searchscope" id="searchscope" value="">
+                <input type="hidden" name="timescope" value="">
+                <input type="hidden" name="orderby" value="-docreltime">
+				<input type="hidden" name="sStartTime" value="">
+				<input type="hidden" name="sEndTime" value="">
+                <input type="hidden" name="channelid" id="channelid" value="246074">
+                <input type="hidden" name="perpage" value="">
+				<input type="hidden" name="page" value="">
+                <input type="hidden" name="templet" value="">
+                <input type="hidden" name="token" value="">
+<div class="searkuang">
+<div class="select_box select_boxsmall"><i></i> <span id="showscope">标题</span>
+    <ul>
+      <li onclick="setSearchScope('标题')">标题</li>
+      <li onclick="setSearchScope('正文')">正文</li>
+      <li onclick="setSearchScope('全部')">全部</li>
+    </ul>
+  </div>
+<div class="searinput"><input type="text" name="searchword" id="searchword" value='2020年记账式附息（一期）国债'  placeholder="" /></div>
+<div class="anniu"><a href="javascript:void(0);"  onclick="checkInput();" class="btnsear"><img src="mofimages/czb_searicon.png" alt=""    /></a></div>
+<!--div class="anniu"><a href="javascript:void(0);" class="btnsear" id="simplesearch"><img src="mofimages/czb_searicon.png" alt=""    /></a></div-->
+</form>
+</div>
+
+<div class="clear"></div>
+</div>
+
+<div class="list_search">
+<div class="paixubox">
+
+
+<div class="selbox">
+  <div class="select_box"><i></i> <span>时间不限</span>
+    <ul>
+	  <li onclick="setTimeScope('');">时间不限</li>
+      <li onclick="setTimeScope('date');">一天内</li>
+      <li onclick="setTimeScope('week');">一周内</li>
+      <li onclick="setTimeScope('month');">一个月内</li>
+      <li onclick="setTimeScope('year');">一年内</li>
+      <li class="nobg"><div class="zdydiv">
+      <p>自定义时间</p>
+      <div class="zidingyi"><input type="text" class="wenben"  id="sstarttime" value="" onClick="WdatePicker({dateFmt:'yyyy.MM.dd',isShowClear:false,readOnly:true,minDate:'1950-01-01',maxDate:'#F{$dp.$D(\'sendtime\') ||  \'%y.%M.%d\'  }' })" />至<input id="sendtime" type="text"  value=""  onClick="WdatePicker({dateFmt:'yyyy.MM.dd',isShowClear:false,readOnly:true,minDate:'#F{$dp.$D(\'sstarttime\')}',maxDate:'%y.%M.%d'})" class="wenben" /><input  type="button" name="mytimeok" id="mytimeok"  onclick="setTimeScope('customdate');" value="确定" class="btn"></div>
+      </div></li>
+      
+    </ul>
+  </div>
+  </div>
+</div>
+
+很抱歉，没有找到和您的查询相匹配的结果。<br><br>您可以尝试更换检索词，重新检索。
+        
+
+</div>
+<div id="footer">
+  <div class="footercon">
+  <div class="footerconfl">
+<a href="http://121.43.68.40/exposure/jiucuo.html?site_code=bm14000001&url=http%3A%2F%2Fwww.mof.gov.cn%2Findex.htm" target="_blank"> <img src="mofimages/czb_jiucuo.png" /></a>
+<a href="http://bszs.conac.cn/sitename?method=show&id=266EB2A9742A78D5E053022819ACC6F4" target="_blank"><img src="mofimages/czb_dangzh.png" /></a>
+</div>
+<div class="footerconfr">
+ <ul>
+  <li><a href="http://www.mof.gov.cn/wzdt/" >网站地图</a></li>
+  <li class="last"><a href="http://www.mof.gov.cn/gywm/">联系我们</a></li>
+  <!--li class="last"><a href="#">访问分析</a></li-->
+  <div class="clear"></div>
+ </ul>
+ <p>主办单位：中华人民共和国财政部<br />
+网站标识码：bm14000001&nbsp;&nbsp;京ICP备05002860号 &nbsp;&nbsp;<img src="mofimages/czb_beian.png" />京公网安备11010202000002号<br />
+技术支持：财政部信息网络中心<br />
+中华人民共和国财政部&nbsp;&nbsp;版权所有，如需转载，请注明来源</p>	
+</div>
+<div class="clear"></div>
+</div> 
+</div>
+<div class="popfr">
+<ul>
+<li><img src="mofimages/czb_pop3.jpg" /><h3>财政部微信</h3></li>
+<li><img src="mofimages/czb_pop4.jpg" /><h3>移动客户端</h3><span>Android下载</span></li>
+<li><img src="mofimages/czb_pop5.jpg" /><h3>移动客户端</h3><span>iphone下载</span></li>
+</ul>
+</div>
+<script>
+//搜索页下拉框
+$(function(){
+	var s_title=$(".select_box span");
+    var s_select = $(".select_box li");
+    var s_input = $(".select_box .zdydiv");
+	
+	s_title.click(function(e){
+		$(this).addClass("span_aa");
+		$(this).next("ul").show();
+		//alert($(this).txt());
+		e.stopPropagation();
+	});		
+
+	/**$(".paixubox a").click(function () {
+		$(".paixubox a").removeClass("on");
+	   $(this).addClass("on");
+    });	*/
+
+	s_select.click(function(){
+		var s_text=$(this).html();
+		//alert(s_text);
+		if(s_text=="标题"){
+			$("#searchscope").val("doctitle");
+		}
+		if(s_text=="正文"){
+			$("#searchscope").val("doccontent");
+		}
+		if(s_text=="全部"){
+			$("#searchscope").val("");
+		}
+		var s_title_2=$(this).parent('ul').prev("span");
+		s_title_2.html(s_text).removeClass("span_aa");
+		$(this).parent('ul').hide();		
+    });  
+
+    s_input.click(function (e) {
+        e.stopPropagation();
+    });
+
+	$(document).click(function(){
+		//alert("111");
+		s_title.removeClass("span_aa");
+		$(".select_box ul").hide();		
+		});      
+});
+</script>
+
+<script type="text/javascript"> 
+//init method one 
+$(document).ready(function(){ 
+     var sChannels=["办公厅#251553","财政票据监管中心#214342","干部教育中心#255918","关税司#230825","国际经济合作司#261273","国库司#246074","会计司#289898","机关党委#224858","综合司#274731","国际经济关系司#294410","国际财经中心#227825","全国预算会计研究会#210898","自然资源和生态环境司#297334","政府债务专项办#234450","政策研究室#217754","机关服务中心#256660","监督检查局#221082","科教和文化司#291186","金融司#268577","经济建设司#276609","离退休干部局#205876","农业农村司#274638","资产管理司#204358","人事教育司#248394","社会保障司#225005","税政司#231440","条法司#298335","财政部巡视工作领导小组#254632","预算评审中心#240595","信息网络中心#269877","行政政法司#242968","预算司#264148","纪检组#260381","安徽监管局#270532","北京监管局#262861","大连监管局#235112","福建监管局#220967","甘肃监管局#231933","广东监管局#216704","广西监管局#295440","贵州监管局#205812","海南监管局#265933","河北监管局#281606","河南监管局#221430","黑龙江监管局#220310","湖北监管局#247889","湖南监管局#212816","吉林监管局#231601","江苏监管局#282281","江西监管局#209509","辽宁监管局#261810","内蒙古监管局#267421","宁波监管局#249212","宁夏监管局#224831","青岛监管局#287364","青海监管局#229198","山东监管局#269436","山西监管局#249529","陕西监管局#271290","上海监管局#254565","深圳监管局#275363","四川监管局#206768","天津监管局#299377","厦门监管局#289710","新疆监管局#249420","浙江监管局#253660","云南监管局#239799","重庆监管局#250075","中国财经报#223590","中国财政杂志社#216843","中国财政部#202425"];
+	 var channelid=$("#channelid").val();
+	 if(channelid==""){
+		 channelid="251553";
+	 }
+	 //alert(channelid);
+     for( i=0;i<sChannels.length;i++){
+		if(sChannels[i].split("#")[1]==channelid){
+			$("#zzName").html(sChannels[i].split("#")[0]);
+			break;
+		 }
+	}
+}); 
+</script>
+
+</body>
+</html>

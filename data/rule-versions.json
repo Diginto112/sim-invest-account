@@ -1,0 +1,60 @@
+{
+  "rule_version": "CN-2020-H1-LOCAL-v32",
+  "effective_window": {
+    "from": "2020-01-02",
+    "to": "2020-06-30"
+  },
+  "stock": {
+    "market": "Shanghai A-share historical sample",
+    "lot_size": 100,
+    "settlement": "T+1 shares available",
+    "execution_model": "Daily close-price matching; no intraday order book",
+    "session": [
+      "09:30-11:30",
+      "13:00-15:00"
+    ],
+    "commission_rate": 0.0003,
+    "commission_minimum": 5,
+    "commission_status": "configurable_account_assumption",
+    "transfer_fee_rate": 0.00002,
+    "sell_tax_rate": 0.001,
+    "status": "2020_window_model_parameters"
+  },
+  "fund": {
+    "valuation": "next_valuation_day_published_nav",
+    "subscription_confirmation": "收盘后提交，下一估值日NAV公布后确认（简化时序）",
+    "redemption_arrival": "提交后第二个回放交易日（简化T+2）",
+    "subscription_fee_rate": 0.0015,
+    "redemption_fee_rate": 0.005,
+    "transaction_fee_status": "teaching_channel_assumption_not_verified_historical_contract",
+    "management_fee_annual_demo": 0.015,
+    "custody_fee_annual_demo": 0.0025,
+    "fee_accrual": "Published actual NAV already includes expenses; no extra debit/units reduction",
+    "status": "historical_nav_with_explicit_execution_assumptions"
+  },
+  "bank": {
+    "product": "中国银行活期存款",
+    "interest_method": "daily_balance_ACT_360_simple_accrual_quarterly_credit",
+    "annual_rate": 0.003,
+    "rate_effective_dates": [
+      "2015-10-24"
+    ],
+    "credit_dates": "Quarter-end months day 21, including calendar weekends",
+    "withdrawal_rule": "按分结清全额支取未结利息；部分支取保留未结利息",
+    "source": "https://www.bankofchina.com/fimarkets/lilv/fd31/201510/t20151023_5824963.html",
+    "status": "official_historical_rate_with_simulated_posting"
+  },
+  "treasury": {
+    "instrument_kind": "book_entry_bond_teaching_example",
+    "lot_size": 1,
+    "coupon_rate": 0.0275,
+    "face_value": 100,
+    "issue_date": "2019-12-30",
+    "maturity_date": "2024-12-30",
+    "coupon_frequency": "semiannual June 30 / December 30",
+    "next_coupon_date": "2020-06-30",
+    "accrued_interest_method": "actual_elapsed_days_in_coupon_period",
+    "execution": "clean_price_plus_accrued_interest",
+    "status": "explicit_synthetic_teaching_example"
+  }
+}

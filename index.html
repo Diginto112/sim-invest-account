@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1d6be3" />
+    <meta name="description" content="模拟投资账户：用历史市场规则练习资产配置与风险管理。" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css?v=32-delivery" />
+    <title>模拟投资账户</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">SIMULATED ACCOUNT</div>
+          <h1>模拟投资账户</h1>
+        </div>
+        <button class="icon-button" id="resetBtn" title="重置回放">↺</button>
+      </header>
+
+      <main id="app" class="screen-container">
+        <section class="view active" data-view="home">
+          <div class="account-head">
+            <div>
+              <span class="eyebrow">模拟账户 · 人民币</span>
+              <h2>个人投资账户</h2>
+              <p>回放区间 2020-01-02 至 2020-06-30 · 当前日期 <strong id="accountDate">—</strong></p>
+            </div>
+            <button class="account-select" data-go="mine">账户设置 <span>›</span></button>
+          </div>
+
+          <div class="section-head"><div><span class="eyebrow">PORTFOLIO</span><h3>账户总览</h3></div><div class="date-controls"><button class="text-button" id="rewindBtn" disabled>← 上一交易日</button><span class="date-chip" id="currentDate">—</span></div></div>
+          <div class="metric-grid">
+            <div class="metric-card primary"><span>总资产</span><strong id="totalAsset">¥100,000</strong><small id="totalReturn">+0.00%</small></div>
+            <div class="metric-card"><span>今日盈亏</span><strong id="dailyPnl">¥0</strong><small id="dailyPnlPct">+0.00%</small></div>
+            <div class="metric-card"><span>可用现金</span><strong id="cashBalance">¥100,000</strong><small>可随时调配</small></div>
+            <div class="metric-card"><span>回放交易日</span><strong id="dayCount">第 1 天</strong><small>共 117 个交易日</small></div>
+          </div>
+          <div class="account-status-row"><span>待处理订单 <strong id="pendingOrderCount">0</strong></span><span>数据状态 <strong id="homeDataStatus">演示快照 · 待核验</strong></span></div>
+
+          <div class="action-row">
+            <button class="primary-button" id="advanceBtn">进入下一个交易日 <span>→</span></button>
+            <button class="secondary-button" id="reportBtn">查看当日结算</button>
+          </div>
+
+          <div class="section-head compact"><div><span class="eyebrow">MARKET</span><h3>行情快照</h3></div><button class="text-button" data-go="market">查看全部</button></div>
+          <div class="quote-strip" id="quoteStrip"></div>
+
+          <div class="section-head compact"><div><span class="eyebrow">MARKET NOTE</span><h3>市场信息</h3></div></div>
+          <article class="lesson-card" id="lessonCard"></article>
+        </section>
+
+        <section class="view" data-view="market">
+          <div class="page-heading"><span class="eyebrow">MARKET</span><h2>行情</h2><p>查看自选、资产价格和可执行的模拟交易规则。</p></div>
+          <div class="filter-row" id="filterRow">
+            <button class="filter-chip active" data-filter="all">全部</button>
+            <button class="filter-chip" data-filter="股票">股票</button>
+            <button class="filter-chip" data-filter="基金">基金</button>
+            <button class="filter-chip" data-filter="国债">国债</button>
+            <button class="filter-chip" data-filter="创业">创业</button>
+            <button class="filter-chip" data-filter="银行">银行</button>
+          </div>
+          <div id="assetList" class="asset-list"></div>
+        </section>
+
+        <section class="view" data-view="trade">
+          <div class="page-heading"><span class="eyebrow">ORDER TICKET</span><h2>交易</h2><p>订单会记录提交、成交、确认和结算状态。</p></div>
+          <div class="trade-selector" id="tradeSelector"></div>
+          <div class="order-ticket" id="orderTicket"></div>
+          <div class="section-head compact"><div><span class="eyebrow">ORDERS</span><h3>订单与成交</h3></div></div>
+          <div id="orderList" class="activity-list"></div>
+        </section>
+
+        <section class="view" data-view="portfolio">
+          <div class="page-heading"><span class="eyebrow">PORTFOLIO</span><h2>持仓与现金流</h2><p>查看持仓市值、成本、浮动盈亏与资金流水。</p></div>
+          <div class="allocation-card"><div class="allocation-ring" id="allocationRing"><span id="allocationCenter">100%</span></div><div id="allocationLegend" class="allocation-legend"></div></div>
+          <div class="section-head compact"><div><span class="eyebrow">POSITIONS</span><h3>当前持仓</h3></div></div>
+          <div id="positionList" class="position-list"></div>
+          <div class="section-head compact"><div><span class="eyebrow">CASHFLOW</span><h3>最近活动</h3></div></div>
+          <div id="activityList" class="activity-list"></div>
+          <div class="section-head compact"><div><span class="eyebrow">LEDGER</span><h3>资金流水</h3></div></div>
+          <div id="cashflowList" class="activity-list"></div>
+        </section>
+
+        <section class="view" data-view="review">
+          <div class="page-heading"><span class="eyebrow">ANALYSIS</span><h2>收益分析</h2><p>查看净值、回撤、交易记录和收益归因。</p></div>
+          <div class="review-summary" id="reviewSummary"></div>
+          <div class="analysis-card"><div class="analysis-card-head"><div><span class="eyebrow">EQUITY CURVE</span><h3>账户净值曲线</h3></div><span class="muted">按交易日</span></div><svg id="equityChart" class="equity-chart" viewBox="0 0 640 180" role="img" aria-label="账户净值曲线"></svg><div id="equityChartLabels" class="chart-labels"></div></div>
+          <div class="section-head compact"><div><span class="eyebrow">ATTRIBUTION</span><h3>收益归因</h3></div></div>
+          <div class="attribution-grid" id="attributionGrid"></div>
+          <div class="section-head compact"><div><span class="eyebrow">TIMELINE</span><h3>市场日历</h3></div></div>
+          <div id="timelineList" class="timeline-list"></div>
+          <div class="section-head compact"><div><span class="eyebrow">KNOWLEDGE</span><h3>知识要点</h3></div></div>
+          <div class="course-grid" id="courseGrid"></div>
+        </section>
+
+        <section class="view" data-view="mine">
+          <div class="page-heading"><span class="eyebrow">ACCOUNT</span><h2>我的账户</h2><p>查看回放设置、数据版本和账户操作。</p></div>
+          <div class="settings-card"><div><span>回放区间</span><strong>2020-01-02 至 2020-06-30</strong></div><div><span>交易时段</span><strong>09:30–11:30 / 13:00–15:00</strong></div><div><span>回放机制</span><strong>按交易日回放 · 利息按自然日</strong></div><div><span>规则版本</span><strong>CN-2020-H1-LOCAL-v32</strong></div><div><span>数据快照</span><strong id="dataSnapshotValue">demo-snapshot-v8 · 待核验</strong></div><div class="settings-form"><label for="initialCapitalInput">初始模拟资金</label><div class="settings-form-row"><input id="initialCapitalInput" type="number" min="1000" step="100" inputmode="decimal" value="100000" /><button class="secondary-button compact-button" id="applyAccountConfigBtn">重置并应用</button></div><small>修改本金会清空当前订单、持仓和回放进度。</small></div></div>
+          <div class="settings-actions"><button class="secondary-button" id="exportBtn">导出账户快照</button><button class="secondary-button" id="analysisBtn">资产分析</button><label class="secondary-button file-button">导入历史数据<input id="dataImport" type="file" accept=".json,.csv,application/json,text/csv" /></label><a class="secondary-button file-button" href="data/authorized-market-data-template.csv" download>下载数据模板</a></div>
+          <div class="data-notice"><span class="notice-icon">ⓘ</span><div><strong>模拟账户说明</strong><br /><span>不连接真实银行或券商。真实历史数据导入前，所有报价都标记为演示数据。</span></div></div>
+          <div class="data-quality" id="dataQualitySummary"></div>
+          <div class="settings-card"><h3>股票佣金假设</h3><p class="muted">券商佣金因账户而异。这里调整后续模拟委托的佣金；印花税与过户费另列。</p><div class="settings-form"><label for="commissionRateInput">佣金（万分之）</label><input id="commissionRateInput" type="number" min="0" max="30" step="0.1" value="3" inputmode="decimal" /></div><div class="settings-form"><label for="commissionMinInput">最低佣金（元）</label><input id="commissionMinInput" type="number" min="0" max="100" step="0.1" value="5" inputmode="decimal" /></div><button class="secondary-button" id="applyCommissionBtn">保存佣金假设</button></div>
+          <button class="secondary-button full" id="builtinHistoryBtn">重置并使用内置历史数据</button>
+          <button class="danger-button" id="resetAccountBtn">重置模拟账户</button>
+        </section>
+      </main>
+
+      <nav class="bottom-nav" aria-label="主导航">
+        <button class="nav-item active" data-go="home"><span>⌂</span><small>首页</small></button>
+        <button class="nav-item" data-go="market"><span>◈</span><small>行情</small></button>
+        <button class="nav-item" data-go="trade"><span>＋</span><small>交易</small></button>
+        <button class="nav-item" data-go="portfolio"><span>▣</span><small>持仓</small></button>
+        <button class="nav-item" data-go="mine"><span>●</span><small>我的</small></button>
+      </nav>
+    </div>
+
+    <div class="modal-backdrop" id="tradeModal" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="tradeTitle">
+        <button class="modal-close" id="closeModal">×</button>
+        <span class="eyebrow">SIMULATED ORDER</span>
+        <h2 id="tradeTitle">买入资产</h2>
+        <p id="tradeDescription" class="muted"></p>
+        <div class="trade-side-toggle"><button id="buySideBtn" class="active">买入</button><button id="sellSideBtn">卖出</button></div>
+        <div class="trade-quote"><span id="tradePriceLabel">当前价格</span><strong id="tradePrice">—</strong><span id="tradeRule">—</span></div>
+        <label class="field-label" for="tradeAmount">投入金额（元）</label>
+        <input class="amount-input" id="tradeAmount" type="number" inputmode="decimal" min="100" step="100" value="10000" />
+        <div class="amount-presets"><button data-amount="1000">¥1,000</button><button data-amount="5000">¥5,000</button><button data-amount="10000">¥10,000</button><button data-amount="max">全部现金</button></div>
+        <label class="recurring-row" id="bankRecurringRow"><input id="bankRecurring" type="checkbox" /> 设置每月银行定投（按首个可用交易日扣款）</label>
+        <div class="trade-estimate"><span>预计成交</span><strong id="tradeEstimate">—</strong></div>
+        <div class="trade-estimate"><span>预计费用</span><strong id="tradeFee">¥0</strong></div>
+        <div class="trade-estimate"><span>确认 / 结算</span><strong id="tradeSettlementHint">—</strong></div>
+        <button class="primary-button full" id="confirmTrade">提交模拟订单 <span>→</span></button>
+      </div>
+    </div>
+
+    <dialog id="accountConfirmDialog" class="account-confirm" aria-labelledby="accountConfirmTitle"><form method="dialog"><h2 id="accountConfirmTitle">重新开始回放</h2><p id="accountConfirmMessage"></p><div class="action-row"><button class="secondary-button" value="cancel" autofocus>保留当前账户</button><button class="primary-button" value="confirm">确认重置</button></div></form></dialog>
+    <div class="toast" id="toast"></div>
+    <script src="data/historical-snapshot.js?v=32-delivery"></script>
+    <script src="app.js?v=32-delivery"></script>
+  </body>
+</html>

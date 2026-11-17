@@ -1,0 +1,5 @@
+const fs=require('fs');const path=require('path');const root=path.resolve(__dirname,'..','data','research');
+const query=new URL('https://www.baidu.com/s');query.searchParams.set('wd','2020年记账式附息（一期）国债 票面利率');
+const sources=[{id:'treasury-baidu-search',url:query.href,file:'treasury-baidu-search.html'},{id:'boc-counter-treasury-index',url:'https://www.bankofchina.com/fimarkets/fp3/',file:'boc-counter-treasury-index.html'}];
+async function run(s){try{const r=await fetch(s.url,{headers:{'User-Agent':'Mozilla/5.0'},signal:AbortSignal.timeout(20000)});const body=await r.text();fs.writeFileSync(path.join(root,s.file),body);return{...s,status:r.status,bytes:Buffer.byteLength(body),retrieved_at:new Date().toISOString()}}catch(e){return{...s,error:e.cause?.code||e.message,retrieved_at:new Date().toISOString()}}}
+(async()=>{const out=await Promise.all(sources.map(run));fs.writeFileSync(path.join(root,'fetch-treasury-final-results.json'),JSON.stringify(out,null,2));console.log(JSON.stringify(out,null,2))})();

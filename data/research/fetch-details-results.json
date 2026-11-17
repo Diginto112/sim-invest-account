@@ -1,0 +1,50 @@
+[
+  {
+    "id": "boc-deposit-archive",
+    "url": "https://www.boc.cn/finadata/lilv/fd31/",
+    "file": "boc-deposit-archive.html",
+    "status": 200,
+    "bytes": 254,
+    "retrieved_at": "2026-11-14T03:42:56.279Z"
+  },
+  {
+    "id": "mof-treasury-office",
+    "url": "https://gks.mof.gov.cn/",
+    "file": "mof-treasury-office.html",
+    "status": 200,
+    "bytes": 19883,
+    "retrieved_at": "2026-11-14T03:42:56.184Z"
+  },
+  {
+    "id": "fund-005827-overview",
+    "url": "https://fundf10.eastmoney.com/jbgk_005827.html",
+    "file": "fund-005827-overview.html",
+    "status": 200,
+    "bytes": 54241,
+    "retrieved_at": "2026-11-14T03:42:56.498Z"
+  },
+  {
+    "id": "fund-005827-dividends",
+    "url": "https://fundf10.eastmoney.com/fhsp_005827.html",
+    "file": "fund-005827-dividends.html",
+    "status": 200,
+    "bytes": 44333,
+    "retrieved_at": "2026-11-14T03:42:56.818Z"
+  },
+  {
+    "id": "fund-005827-fees",
+    "url": "https://fundf10.eastmoney.com/jjfl_005827.html",
+    "file": "fund-005827-fees.html",
+    "status": 200,
+    "bytes": 46532,
+    "retrieved_at": "2026-11-14T03:42:56.825Z"
+  },
+  {
+    "id": "baostock-disclaimer-content",
+    "url": "https://www.baostock.com/articleMall/api/contract?contract_status=1&contract_type=5",
+    "file": "baostock-disclaimer-content.json",
+    "status": 200,
+    "bytes": 2542,
+    "retrieved_at": "2026-11-14T03:42:56.641Z"
+  }
+]

@@ -1,0 +1,10 @@
+* text=auto eol=lf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Keep downloaded research evidence byte-for-byte for SHA-256 verification.
+data/research/** -text -whitespace
+
+*.png binary
+*.jpg binary
+*.jar binary

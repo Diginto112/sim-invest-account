@@ -1,0 +1,18 @@
+[
+  {
+    "id": "boc-deposit-archive-redirect",
+    "url": "https://www.bankofchina.com/fimarkets/lilv/fd31/",
+    "file": "boc-deposit-archive-full.html",
+    "status": 200,
+    "bytes": 30897,
+    "retrieved_at": "2026-11-14T03:44:43.885Z"
+  },
+  {
+    "id": "mof-official-search-treasury",
+    "url": "https://search.mof.gov.cn/was5/web/search?channelid=246074&searchword=2020%E5%B9%B4%E8%AE%B0%E8%B4%A6%E5%BC%8F%E9%99%84%E6%81%AF%EF%BC%88%E4%B8%80%E6%9C%9F%EF%BC%89%E5%9B%BD%E5%80%BA",
+    "file": "mof-official-search-treasury.html",
+    "status": 200,
+    "bytes": 13163,
+    "retrieved_at": "2026-11-14T03:44:43.802Z"
+  }
+]

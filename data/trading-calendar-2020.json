@@ -1,0 +1,34 @@
+{
+  "calendar_id": "CN-A-2020-H1-CROSS-CHECKED",
+  "market": "China A-share and fund valuation replay",
+  "period": {
+    "from": "2020-01-02",
+    "to": "2020-06-30"
+  },
+  "closed_intervals": [
+    {
+      "from": "2020-01-24",
+      "to": "2020-02-02",
+      "reason": "春节休市含延长安排（与实际日线日期核对）"
+    },
+    {
+      "from": "2020-04-04",
+      "to": "2020-04-06",
+      "reason": "清明节"
+    },
+    {
+      "from": "2020-05-01",
+      "to": "2020-05-05",
+      "reason": "劳动节"
+    },
+    {
+      "from": "2020-06-25",
+      "to": "2020-06-27",
+      "reason": "端午节"
+    }
+  ],
+  "source": "东方财富600036日线与005827净值日期交叉核对（各117条）；与休市区间生成日期逐项匹配",
+  "license_status": "public_pending_review",
+  "note": "运行时使用historical-snapshot.js内经校验的日期数组；本文件用于构建交叉校验。并非交易所官方日历再分发。",
+  "status": "cross_checked"
+}

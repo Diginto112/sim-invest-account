@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.npm-cache/
+/web/
+.env
+.env.*
+!.env.example
+*.log
+local.properties
+*.keystore
+*.jks
+*.pem
+*.key
+.DS_Store
+Thumbs.db

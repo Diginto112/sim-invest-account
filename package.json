@@ -1,0 +1,24 @@
+{
+  "name": "sim-invest-account",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Android-first simulated investment account PWA packaged with Capacitor.",
+  "scripts": {
+    "start": "node scripts/serve.cjs",
+    "prepare:web": "node scripts/prepare-capacitor.cjs",
+    "validate": "node scripts/validate-project.cjs",
+    "android:sync": "npm run prepare:web && npx cap sync android",
+    "android:open": "npx cap open android",
+    "android:build:debug": "npm run prepare:web && npx cap sync android && cd android && gradlew.bat assembleDebug",
+    "test": "node scripts/test-project.cjs",
+    "data:build": "node scripts/build-history.cjs"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.1",
+    "@capacitor/core": "^6.2.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.1",
+    "typescript": "^5.6.3"
+  }
+}

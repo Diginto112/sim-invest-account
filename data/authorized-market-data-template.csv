@@ -1,0 +1,5 @@
+date,asset_id,symbol,close,nav,rate_annualized,source,license_status,retrieved_at,timezone,snapshot_id
+2020-01-02,stock,DEMO,35.20,,,内置演示曲线,demo,2026-11-14,Asia/Shanghai,demo-snapshot-v8
+2020-01-02,fund,DEMO,,1.000,,内置演示曲线,demo,2026-11-14,Asia/Shanghai,demo-snapshot-v8
+2020-01-02,bond,DEMO,100.35,,,内置演示曲线,demo,2026-11-14,Asia/Shanghai,demo-snapshot-v8
+2020-01-02,bank,DEMO,,,0.015,内置演示曲线,demo,2026-11-14,Asia/Shanghai,demo-snapshot-v8

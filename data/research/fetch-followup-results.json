@@ -1,0 +1,137 @@
+[
+  {
+    "id": "fund-005827-page-1",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=005827&pageIndex=1&pageSize=20&startDate=2020-01-02&endDate=2020-06-30",
+    "file": "fund-005827-2020h1-p1.json",
+    "headers": {
+      "Referer": "https://fundf10.eastmoney.com/"
+    },
+    "status": 200,
+    "final_url": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=005827&pageIndex=1&pageSize=20&startDate=2020-01-02&endDate=2020-06-30",
+    "retrieved_at": "2026-11-14T03:40:44.547Z",
+    "bytes": 4507
+  },
+  {
+    "id": "fund-005827-page-2",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=005827&pageIndex=2&pageSize=20&startDate=2020-01-02&endDate=2020-06-30",
+    "file": "fund-005827-2020h1-p2.json",
+    "headers": {
+      "Referer": "https://fundf10.eastmoney.com/"
+    },
+    "status": 200,
+    "final_url": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=005827&pageIndex=2&pageSize=20&startDate=2020-01-02&endDate=2020-06-30",
+    "retrieved_at": "2026-11-14T03:40:44.638Z",
+    "bytes": 4508
+  },
+  {
+    "id": "fund-005827-page-3",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=005827&pageIndex=3&pageSize=20&startDate=2020-01-02&endDate=2020-06-30",
+    "file": "fund-005827-2020h1-p3.json",
+    "headers": {
+      "Referer": "https://fundf10.eastmoney.com/"
+    },
+    "status": 200,
+    "final_url": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=005827&pageIndex=3&pageSize=20&startDate=2020-01-02&endDate=2020-06-30",
+    "retrieved_at": "2026-11-14T03:40:44.637Z",
+    "bytes": 4507
+  },
+  {
+    "id": "fund-005827-page-4",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=005827&pageIndex=4&pageSize=20&startDate=2020-01-02&endDate=2020-06-30",
+    "file": "fund-005827-2020h1-p4.json",
+    "headers": {
+      "Referer": "https://fundf10.eastmoney.com/"
+    },
+    "status": 200,
+    "final_url": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=005827&pageIndex=4&pageSize=20&startDate=2020-01-02&endDate=2020-06-30",
+    "retrieved_at": "2026-11-14T03:40:44.632Z",
+    "bytes": 4511
+  },
+  {
+    "id": "fund-005827-page-5",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=005827&pageIndex=5&pageSize=20&startDate=2020-01-02&endDate=2020-06-30",
+    "file": "fund-005827-2020h1-p5.json",
+    "headers": {
+      "Referer": "https://fundf10.eastmoney.com/"
+    },
+    "status": 200,
+    "final_url": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=005827&pageIndex=5&pageSize=20&startDate=2020-01-02&endDate=2020-06-30",
+    "retrieved_at": "2026-11-14T03:40:44.681Z",
+    "bytes": 4506
+  },
+  {
+    "id": "fund-005827-page-6",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=005827&pageIndex=6&pageSize=20&startDate=2020-01-02&endDate=2020-06-30",
+    "file": "fund-005827-2020h1-p6.json",
+    "headers": {
+      "Referer": "https://fundf10.eastmoney.com/"
+    },
+    "status": 200,
+    "final_url": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=005827&pageIndex=6&pageSize=20&startDate=2020-01-02&endDate=2020-06-30",
+    "retrieved_at": "2026-11-14T03:40:44.678Z",
+    "bytes": 3860
+  },
+  {
+    "id": "stock-600036-2020h1",
+    "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600036&klt=101&fqt=0&beg=20200102&end=20200630&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+    "file": "stock-600036-2020h1.json",
+    "status": 200,
+    "final_url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600036&klt=101&fqt=0&beg=20200102&end=20200630&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+    "retrieved_at": "2026-11-14T03:40:44.797Z",
+    "bytes": 9428
+  },
+  {
+    "id": "stock-600036-dividend-2019",
+    "url": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_SHAREBONUS_DET&columns=ALL&filter=%28SECURITY_CODE%3D%22600036%22%29%28REPORT_DATE%3D%272019-12-31%27%29&pageNumber=1&pageSize=20",
+    "file": "stock-600036-dividend-2019.json",
+    "status": 200,
+    "final_url": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_SHAREBONUS_DET&columns=ALL&filter=%28SECURITY_CODE%3D%22600036%22%29%28REPORT_DATE%3D%272019-12-31%27%29&pageNumber=1&pageSize=20",
+    "retrieved_at": "2026-11-14T03:40:44.759Z",
+    "bytes": 1040
+  },
+  {
+    "id": "baostock-disclaimer",
+    "url": "https://www.baostock.com/assets/Disclaimer-TqSlY2vn.js",
+    "file": "baostock-disclaimer.js.txt",
+    "status": 200,
+    "final_url": "https://www.baostock.com/assets/Disclaimer-TqSlY2vn.js",
+    "retrieved_at": "2026-11-14T03:40:44.936Z",
+    "bytes": 864
+  },
+  {
+    "id": "icbc-deposit-index",
+    "url": "https://www.icbc.com.cn/ICBC/金融信息/存款利率/人民币存款利率表/",
+    "file": "icbc-deposit-index.html",
+    "status": 404,
+    "final_url": "https://www.icbc.com.cn/ICBC/%E9%87%91%E8%9E%8D%E4%BF%A1%E6%81%AF/%E5%AD%98%E6%AC%BE%E5%88%A9%E7%8E%87/%E4%BA%BA%E6%B0%91%E5%B8%81%E5%AD%98%E6%AC%BE%E5%88%A9%E7%8E%87%E8%A1%A8/",
+    "retrieved_at": "2026-11-14T03:40:45.127Z",
+    "bytes": 176
+  },
+  {
+    "id": "search-bank-rate",
+    "url": "https://www.bing.com/search?q=site.icbc.com.cn+%222015-10-24%22+%22%E6%B4%BB%E6%9C%9F%22",
+    "file": "search-bank-rate.html",
+    "status": 200,
+    "final_url": "https://cn.bing.com/search?q=site.icbc.com.cn+%222015-10-24%22+%22%E6%B4%BB%E6%9C%9F%22",
+    "retrieved_at": "2026-11-14T03:40:45.570Z",
+    "bytes": 88124
+  },
+  {
+    "id": "search-treasury-200001",
+    "url": "https://www.bing.com/search?q=site.mof.gov.cn+%222020%E5%B9%B4%E8%AE%B0%E8%B4%A6%E5%BC%8F%E9%99%84%E6%81%AF%EF%BC%88%E4%B8%80%E6%9C%9F%EF%BC%89%E5%9B%BD%E5%80%BA%22",
+    "file": "search-treasury-200001.html",
+    "status": 200,
+    "final_url": "https://cn.bing.com/search?q=site.mof.gov.cn+%222020%E5%B9%B4%E8%AE%B0%E8%B4%A6%E5%BC%8F%E9%99%84%E6%81%AF%EF%BC%88%E4%B8%80%E6%9C%9F%EF%BC%89%E5%9B%BD%E5%80%BA%22",
+    "retrieved_at": "2026-11-14T03:40:45.569Z",
+    "bytes": 90677
+  },
+  {
+    "id": "search-stock-600036-corporate-action",
+    "url": "https://www.bing.com/search?q=%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C+2019%E5%B9%B4%E5%BA%A6+A%E8%82%A1+%E5%88%86%E7%BA%A2+2020+7%E6%9C%8813%E6%97%A5",
+    "file": "search-stock-600036-corporate-action.html",
+    "status": 200,
+    "final_url": "https://cn.bing.com/search?q=%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C+2019%E5%B9%B4%E5%BA%A6+A%E8%82%A1+%E5%88%86%E7%BA%A2+2020+7%E6%9C%8813%E6%97%A5",
+    "retrieved_at": "2026-11-14T03:40:46.082Z",
+    "bytes": 90491
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "snapshot_id": "cn-2020h1-public-local-v1",
+  "status": "mixed_historical_and_scenarios",
+  "license_status": "public_pending_review",
+  "retrieved_at": "2026-11-14T03:40:44.797Z",
+  "currency": "CNY",
+  "period": {
+    "from": "2020-01-02",
+    "to": "2020-06-30"
+  },
+  "sources": [
+    {
+      "dataset": "stock_daily_quotes",
+      "symbol": "600036",
+      "name": "招商银行",
+      "rows": 117,
+      "data_kind": "actual_historical",
+      "adjustment": "unadjusted",
+      "source": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600036&klt=101&fqt=0&beg=20200102&end=20200630&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+      "license_status": "public_pending_review"
+    },
+    {
+      "dataset": "fund_nav",
+      "symbol": "005827",
+      "name": "易方达蓝筹精选混合",
+      "rows": 117,
+      "data_kind": "actual_historical",
+      "nav_fees_included": true,
+      "source": "https://fundf10.eastmoney.com/jjjz_005827.html",
+      "license_status": "public_pending_review"
+    },
+    {
+      "dataset": "bank_rates",
+      "name": "中国银行人民币活期存款",
+      "rows": 1,
+      "rate_annualized": 0.003,
+      "rate_effective_from": "2015-10-24",
+      "data_kind": "actual_historical",
+      "source": "https://www.bankofchina.com/fimarkets/lilv/fd31/201510/t20151023_5824963.html",
+      "license_status": "public_pending_review"
+    },
+    {
+      "dataset": "trading_calendar",
+      "rows": 117,
+      "status": "cross_checked",
+      "source": "东方财富600036日线与005827净值日期交叉核对（各117条）；与休市区间生成日期逐项匹配",
+      "license_status": "public_pending_review"
+    },
+    {
+      "dataset": "treasury_bond",
+      "data_kind": "synthetic_teaching_example",
+      "license_status": "demo",
+      "note": "记账式国债教学例子，非真实发行代码/历史行情"
+    },
+    {
+      "dataset": "entrepreneurship",
+      "data_kind": "education_scenario",
+      "license_status": "demo",
+      "note": "开店经营及公司融资退出使用明确的情景参数"
+    }
+  ],
+  "purpose": "当前用户设备上的个人学习与离线模拟。公开取得不等于开放再分发许可；未声称获得商业或公开再分发授权。",
+  "research": "data/research/SOURCES_RESEARCH.md",
+  "calendar_file": "data/trading-calendar-2020.json"
+}

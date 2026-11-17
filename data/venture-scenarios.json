@@ -1,0 +1,26 @@
+{
+  "scenario_id": "venture-demo-2020-h1",
+  "status": "education_scenario_pending_review",
+  "currency": "CNY",
+  "shop": {
+    "name": "社区咖啡店",
+    "settlement_interval_days": 20,
+    "fixed_costs": {"rent_monthly": 2200, "labour_monthly": 1850},
+    "variable_cost_ratio": 0.22,
+    "tax_rate_on_profit": 0.05,
+    "liquidation_recovery_ratio": 0.85
+  },
+  "startup": {
+    "name": "智能硬件初创公司",
+    "initial_round": "种子轮",
+    "monthly_burn": 12000,
+    "external_rounds": [
+      {"day": 40, "round": "A轮融资", "capital": 80000, "dilution": 0.1, "milestone": "完成试产"},
+      {"day": 65, "round": "B轮准备", "capital": 0, "dilution": 0, "milestone": "商业化验证"}
+    ],
+    "exit_day": 100
+  },
+  "source": "用户自定义情景参数/待核验公开行业参数",
+  "license_status": "pending_verification",
+  "note": "这些参数用于教学情景，不代表任何真实公司或收益预期。"
+}
