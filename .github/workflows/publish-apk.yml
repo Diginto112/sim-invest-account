@@ -1,0 +1,69 @@
+name: Publish Android APK
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'downloads/**'
+      - 'RELEASE_NOTES.md'
+      - '.github/workflows/publish-apk.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-apk-v0.2.0
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check out the approved main commit
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Verify the existing APK
+        run: |
+          test -f downloads/sim-invest-account-v0.2.0-debug.apk
+          test -s RELEASE_NOTES.md
+          sha256sum -c downloads/SHA256SUMS.txt
+
+      - name: Upload and publish the prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: v0.2.0
+          RELEASE_TITLE: 模拟投资账户 v0.2.0（Android 调试版）
+        run: |
+          if ! gh release view "$RELEASE_TAG" --repo "$GH_REPO" >/dev/null 2>&1; then
+            gh release create "$RELEASE_TAG" \
+              --repo "$GH_REPO" \
+              --target "$GITHUB_SHA" \
+              --title "$RELEASE_TITLE" \
+              --notes-file RELEASE_NOTES.md \
+              --draft \
+              --prerelease
+          fi
+
+          gh release upload "$RELEASE_TAG" \
+            downloads/sim-invest-account-v0.2.0-debug.apk \
+            downloads/SHA256SUMS.txt \
+            --repo "$GH_REPO" \
+            --clobber
+
+          gh release edit "$RELEASE_TAG" \
+            --repo "$GH_REPO" \
+            --title "$RELEASE_TITLE" \
+            --notes-file RELEASE_NOTES.md \
+            --prerelease \
+            --draft=false

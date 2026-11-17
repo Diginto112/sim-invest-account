@@ -8,3 +8,4 @@ data/research/** -text -whitespace
 *.png binary
 *.jpg binary
 *.jar binary
+*.apk binary
